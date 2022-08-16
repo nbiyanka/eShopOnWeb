@@ -9,9 +9,7 @@ namespace Microsoft.eShopWeb.Infrastructure.Data;
 
 public class CatalogContextSeed
 {
-    public static async Task SeedAsync(CatalogContext catalogContext,
-        ILogger logger,
-        int retry = 0)
+    public static async Task SeedAsync(CatalogContext catalogContext, ILogger logger, int retry = 0)
     {
         var retryForAvailability = retry;
         try
