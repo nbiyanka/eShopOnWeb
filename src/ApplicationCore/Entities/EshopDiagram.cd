@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.CatalogBrand" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="4.5" Width="1.5" />
+    <Position X="0.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Entities\CatalogBrand.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.377" Collapsed="true" />
+    <Lollipop Position="0.377" />
   </Class>
   <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.CatalogItem" BaseTypeListCollapsed="true">
-    <Position X="4.75" Y="3.5" Width="1.5" />
+    <Position X="3" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAA4AgAwAAAAAAAAQAAAEAAAAAAAAAAQAACQA=</HashCode>
       <FileName>Entities\CatalogItem.cs</FileName>
@@ -18,15 +18,100 @@
       <Property Name="CatalogType" />
       <Property Name="CatalogBrand" />
     </ShowAsAssociation>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.CatalogType" BaseTypeListCollapsed="true">
-    <Position X="8" Y="4.5" Width="1.5" />
+    <Position X="6.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Entities\CatalogType.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.BasketAggregate.Basket">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <AssociationLine Name="Items" Type="Microsoft.eShopWeb.ApplicationCore.Entities.BasketAggregate.BasketItem">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.243" Y="0.102" Height="0.182" Width="0.641" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAACAAAAAAAAAAAgRQAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Entities\BasketAggregate\Basket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.BasketAggregate.BasketItem">
+    <Position X="3" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JAAAAAAAACAAEAAAAAAAAAAAAAAAAAAAAAAggAAAAAA=</HashCode>
+      <FileName>Entities\BasketAggregate\BasketItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.BuyerAggregate.Buyer">
+    <Position X="6.25" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Entities\BuyerAggregate\Buyer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="PaymentMethods" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.BuyerAggregate.PaymentMethod">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAIAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Entities\BuyerAggregate\PaymentMethod.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate.Address">
+    <Position X="0.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAAIAAAABAAIABAAAAAA=</HashCode>
+      <FileName>Entities\OrderAggregate\Address.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate.CatalogItemOrdered">
+    <Position X="10.25" Y="10" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAgAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Entities\OrderAggregate\CatalogItemOrdered.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate.Order">
+    <Position X="4" Y="10" Width="1.75" />
+    <AssociationLine Name="ShipToAddress" Type="Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate.Address" FixedFromPoint="true">
+      <Path>
+        <Point X="4" Y="10.938" />
+        <Point X="2.5" Y="10.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAEAAAAAAAAAAAAAAUAAQAAAAAAAAAQAAAA=</HashCode>
+      <FileName>Entities\OrderAggregate\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ShipToAddress" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderItems" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate.OrderItem">
+    <Position X="7" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEAAAAAAAAAA=</HashCode>
+      <FileName>Entities\OrderAggregate\OrderItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ItemOrdered" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

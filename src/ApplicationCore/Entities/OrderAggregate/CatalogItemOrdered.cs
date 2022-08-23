@@ -8,6 +8,11 @@ namespace Microsoft.eShopWeb.ApplicationCore.Entities.OrderAggregate;
 /// </summary>
 public class CatalogItemOrdered // ValueObject
 {
+    private CatalogItemOrdered()
+    {
+        // required by EF
+    }
+
     public CatalogItemOrdered(int catalogItemId, string productName, string pictureUri)
     {
         Guard.Against.OutOfRange(catalogItemId, nameof(catalogItemId), 1, int.MaxValue);
@@ -17,11 +22,6 @@ public class CatalogItemOrdered // ValueObject
         CatalogItemId = catalogItemId;
         ProductName = productName;
         PictureUri = pictureUri;
-    }
-
-    private CatalogItemOrdered()
-    {
-        // required by EF
     }
 
     public int CatalogItemId { get; private set; }
